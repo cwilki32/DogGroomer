@@ -5,6 +5,22 @@
     <meta charset="UTF-8"/>
     <title>Contact Us</title>
     <link rel="stylesheet" th:href="@{/app.css}">
+    <style>
+        .textbox {
+            border: thin solid white;
+            text-align: center;
+            color: white;
+            background-color: black;
+            opacity: 0.8;
+            word-wrap: break-word; /* words won't go from the boundry */
+            margin-top: 5%;
+            margin-left: 30%;
+            margin-right: 30%;
+            padding: 25px;
+            border-radius: 30px;
+        }
+
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -27,21 +43,24 @@
         </div>
     </div>
 </nav>
-<div class="company_info">
-    <h1 class="card-title" th:href="${company.getName}" th:text="${company.getName}"></h1>
-    <p class="card-text" th:href="${company.getPhone}" th:text="${company.getPhone}"></p>
-    <p class="card-text"><a th:href="'mailto:' + ${company.getEmail}" th:text="${company.getEmail}"></a></p>
-    <p class="card-text" th:href="${company.getAddress}" th:text="${company.getAddress}"></p>
-</div>
-<div class="hours">
-    <h3 class="card-title">Hours</h3>
-    <p class="card-text">Sunday: closed</p>
-    <p class="card-text">Monday: 08:00-05:00</p>
-    <p class="card-text">Tuesday: 08:00-05:00</p>
-    <p class="card-text">Wednesday: 08:00-05:00</p>
-    <p class="card-text">Thursday: 08:00-05:00</p>
-    <p class="card-text">Friday: 08:00-05:00</p>
-    <p class="card-text">Saturday: 09:00-04:00</p>
+<div class="textbox">
+    <div class="company_info">
+        <h1 class="card-title" th:href="${company.getName}" th:text="${company.getName}"></h1>
+        <p class="card-text" th:href="${company.getPhone}" th:text="${company.getPhone}"></p>
+        <p class="card-text"><a th:href="'mailto:' + ${company.getEmail}" th:text="${company.getEmail}"
+                                style="color: #30D5C8;"></a></p>
+        <p class="card-text" th:href="${company.getAddress}" th:text="${company.getAddress}"></p>
+    </div>
+    <div class="hours">
+        <h3 class="card-title">Hours</h3>
+        <p class="card-text">Sunday: closed</p>
+        <p class="card-text">Monday: 08:00-05:00</p>
+        <p class="card-text">Tuesday: 08:00-05:00</p>
+        <p class="card-text">Wednesday: 08:00-05:00</p>
+        <p class="card-text">Thursday: 08:00-05:00</p>
+        <p class="card-text">Friday: 08:00-05:00</p>
+        <p class="card-text">Saturday: 09:00-04:00</p>
+    </div>
 </div>
 </body>
 </html>

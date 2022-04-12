@@ -5,6 +5,21 @@
     <meta charset="UTF-8"/>
     <title>Book an Appointment</title>
     <link rel="stylesheet" th:href="@{/app.css}">
+<style>
+    .textbox {
+        border: thin solid white;
+        text-align: center;
+        color: white;
+        background-color: black;
+        opacity: 0.8;
+        word-wrap: break-word; /* words won't go from the boundry */
+        margin-top: auto;
+        margin-left: 25%;
+        margin-right: 25%;
+        padding: 25px;
+        border-radius: 30px;
+    }
+</style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -30,7 +45,9 @@
 <br>
 <div class="scheduler">
 <!--    <h3>To Book an Appointment with NAME</h3>-->
+    <div class="textbox">
     <iframe src='https://www.timetap.com/emb/361549' frameborder='0' width='840' height='500'></iframe>
+    </div>
 </div>
 </body>
 </html>
