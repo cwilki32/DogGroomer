@@ -2,6 +2,7 @@ package com.detroitlabs.doggrooming.controller;
 
 import com.detroitlabs.doggrooming.data.CompanyRepository;
 import com.detroitlabs.doggrooming.data.ServiceRepository;
+import com.detroitlabs.doggrooming.data.StaffRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -12,8 +13,12 @@ public class SiteController {
 
     @Autowired
     private CompanyRepository companyRepository;
+
     @Autowired
     ServiceRepository serviceRepository;
+
+    @Autowired
+    StaffRepository staffRepository;
     //home
     //meet the staff
     //services
@@ -27,7 +32,8 @@ public class SiteController {
     }
 
     @RequestMapping("/staff")
-    public String displayStaff() {
+    public String displayStaff(ModelMap modelMap) {
+        modelMap.put("staff", staffRepository.getAllStaffMembers());
         return "staff";
     }
 

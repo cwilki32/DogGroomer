@@ -27,5 +27,18 @@
         </div>
     </div>
 </nav>
+<div class="staffList">
+    <div class ="row">
+        <div class ="item" th:each="ListOfStaff: ${staff}">
+            <div class ="column">
+                <img th:src="@{'/staffImages/' + ${ListOfStaff.imageID} + '.jpg'}" style="width: 202px; height: 260px;"/>
+                <p th:href="${ListOfStaff.name}" th:text="${ListOfStaff.name}"></p>
+                <p th:href="${ListOfStaff.bio}" th:text="${ListOfStaff.bio}"></p>
+                <hr>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
