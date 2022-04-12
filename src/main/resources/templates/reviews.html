@@ -7,88 +7,114 @@
     <link rel="stylesheet" th:href="@{/app.css}">
     <!-- icon library for reviews page-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!--    <link rel="stylesheet" th:href="@{/reviews.css}">-->
-<style>
-    * {
-        box-sizing: border-box;
-    }
-
-    .reviews-body {
-        font-family: Arial;
-        margin: 0 auto; /* Center website */
-        max-width: 800px; /* Max width */
-        padding: 20px;
-    }
-
-    .heading {
-        font-size: 25px;
-        margin-right: 25px;
-    }
-
-    .fa {
-        font-size: 25px;
-    }
-
-    .checked {
-        color: orange;
-    }
-
-    /* Three column layout */
-    .side {
-        float: left;
-        width: 15%;
-        margin-top: 10px;
-    }
-
-    .middle {
-        float: left;
-        width: 70%;
-        margin-top: 10px;
-    }
-
-    /* Place text to the right */
-    .right {
-        text-align: right;
-    }
-
-    /* Clear floats after the columns */
-    .row:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
-    /* The bar container */
-    .bar-container {
-        width: 100%;
-        background-color: #f1f1f1;
-        text-align: center;
-        color: white;
-    }
-
-    /* Individual bars */
-    .bar-5 {width: 60%; height: 18px; background-color: #04AA6D;}
-    .bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
-    .bar-3 {width: 10%; height: 18px; background-color: #00bcd4;}
-    .bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
-    .bar-1 {width: 15%; height: 18px; background-color: #f44336;}
-
-    /* Responsive layout - make the columns stack on top of each other instead of next to each other */
-    @media (max-width: 400px) {
-        .side, .middle {
-            width: 100%;
+    <!--    <link rel="stylesheet" th:href="@{/reviews.css}">-->
+    <style>
+        * {
+            box-sizing: border-box;
         }
-        /* Hide the right column on small screens */
+
+        .reviews-body {
+            font-family: Arial;
+            margin: 0 auto; /* Center website */
+            max-width: 800px; /* Max width */
+            padding: 20px;
+        }
+
+        .heading {
+            font-size: 25px;
+            margin-right: 25px;
+        }
+
+        .fa {
+            font-size: 25px;
+        }
+
+        .checked {
+            color: orange;
+        }
+
+        /* Three column layout */
+        .side {
+            float: left;
+            width: 15%;
+            margin-top: 10px;
+        }
+
+        .middle {
+            float: left;
+            width: 70%;
+            margin-top: 10px;
+        }
+
+        /* Place text to the right */
         .right {
-            display: none;
+            text-align: right;
         }
-    }
-    /* add padding to container*/
-    .review-container {
-        padding: 20px;
-    }
 
-</style>
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* The bar container */
+        .bar-container {
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            color: white;
+        }
+
+        /* Individual bars */
+        .bar-5 {
+            width: 60%;
+            height: 18px;
+            background-color: #04AA6D;
+        }
+
+        .bar-4 {
+            width: 30%;
+            height: 18px;
+            background-color: #2196F3;
+        }
+
+        .bar-3 {
+            width: 10%;
+            height: 18px;
+            background-color: #00bcd4;
+        }
+
+        .bar-2 {
+            width: 4%;
+            height: 18px;
+            background-color: #ff9800;
+        }
+
+        .bar-1 {
+            width: 15%;
+            height: 18px;
+            background-color: #f44336;
+        }
+
+        /* Responsive layout - make the columns stack on top of each other instead of next to each other */
+        @media (max-width: 400px) {
+            .side, .middle {
+                width: 100%;
+            }
+
+            /* Hide the right column on small screens */
+            .right {
+                display: none;
+            }
+        }
+
+        /* add padding to container*/
+        .review-container {
+            padding: 20px;
+        }
+
+    </style>
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
@@ -180,6 +206,22 @@
         <div class="side right">
             <div>20</div>
         </div>
+    </div>
+    <!-- section for individual reviews-->
+    <div>
+        <h2>Our Reviews</h2>
+        <div>
+            <span class="heading">Amanda</span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <br>
+            <span>Wow!!! I’ve only found one other place (not local) that has done as great a job as this. Collin did an incredible job with my Husky/Malamute mix who has a very difficult double coat to work through (not to mention I haven’t been great at brushing regularly). Highly recommend this place and if your pup has a similar coat spend the money and do the mud mask de-shed if you can afford to. It’s not cheap but absolutely worth it! I also love that they don’t kennel them unless necessary & hand dry aka they do not use kennel dryers.
+</span>
+        </div>
+        <!-- add additional reviews below with new div-->
     </div>
 </div>
 
