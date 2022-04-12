@@ -10,10 +10,11 @@ import java.util.List;
 public class ServiceRepository {
 
     private static List<GroomingServices> ALL_SERVICES = Arrays.asList(
-            new GroomingServices("Mutt Cutt Makeover", "Includes bath, cut, nail trim, ear cleaning" +
+            new GroomingServices("Mutts Cutts Makeover", "Includes bath, cut, nail trim, ear cleaning" +
                     "teeth-brushing", 40),
-            new GroomingServices("Mutt Cutt Touch-up", "Includes bath, ear cleaning, and nail trim", 25),
-            new GroomingServices("Nail Trim", "", 10),
+            new GroomingServices("Mutts Hangout", "Let your pup come hang for a bit", 30),
+            new GroomingServices("Mutts Cutts Touch-up", "Includes bath, ear cleaning, and nail trim", 25),
+            new GroomingServices("Nail Trim", "We'll file or grind", 10),
             new GroomingServices("Bath", "", 20),
             new GroomingServices("Ear cleaning", "", 12),
             new GroomingServices("FFF", "face, feet, fanny trim", 15),
