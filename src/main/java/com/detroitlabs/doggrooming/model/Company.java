@@ -5,7 +5,7 @@ public class Company {
     private String phone;
     private String email;
     private String address;
-    //store hours?
+
 
 
     public Company(String name, String phone, String email, String address) {

@@ -3,6 +3,8 @@ package com.detroitlabs.doggrooming.controller;
 import com.detroitlabs.doggrooming.data.CompanyRepository;
 import com.detroitlabs.doggrooming.data.ServiceRepository;
 import com.detroitlabs.doggrooming.data.StaffRepository;
+import com.detroitlabs.doggrooming.model.Dog;
+import com.detroitlabs.doggrooming.service.DogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -27,7 +29,14 @@ public class SiteController {
     //contact
     //book appt
     @RequestMapping("/")
-    public String displayHomePage() {
+    public String displayHomePage(ModelMap modelMap) {
+        Dog[] dogPic = DogService.fetchDog();
+        modelMap.put("dogPhoto1", dogPic[0].getUrl());
+        modelMap.put("dogPhoto2", dogPic[1].getUrl());
+        modelMap.put("dogPhoto3", dogPic[2].getUrl());
+        modelMap.put("dogPhoto4", dogPic[3].getUrl());
+        modelMap.put("dogPhoto5", dogPic[4].getUrl());
+        modelMap.put("company", companyRepository.getCompanyInfo());
         return "home";
     }
 

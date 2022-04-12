@@ -19,7 +19,12 @@ class DogServiceTest {
     void fetchDog_should_return_URL() {
         System.out.println(result[0].getUrl());
         assertNotNull(result[0].getUrl());
+        System.out.println(result[1].getUrl());
+        assertNotNull(result[1].getUrl());
+        System.out.println(result[2].getUrl());
+        assertNotNull(result[2].getUrl());
     }
+
 
     @Test
     void fetchDog_should_return_name() {
