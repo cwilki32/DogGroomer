@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
     <title>Grooming Services</title>
     <link rel="stylesheet" th:href="@{/app.css}">
@@ -11,28 +13,32 @@
 </head>
 
 <style>
-    .row {
-        position: relative;
-        width: 100%;
-        display: flex;
+
+    * {
+        box-sizing: border-box;
     }
 
-    .col-6.col-12-sm {
-        background: #30D5C8;
+    /* Create two equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 49%;
+        padding: 5px;
         border-radius: 10px;
+        height:125px;
+        margin: 10px 5px 5px 5px;
     }
 
-    .text-holder {
-        padding: 30px;
-        font-family: cursive;
-        color: white;
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
     }
-
 </style>
 
 <body>
 
-<! section for nav bar -->
+<!-- section for nav bar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -53,23 +59,24 @@
         </div>
     </div>
 </nav>
+<h1 style="text-align: center">Services Offered</h1>
 
-
-
-<! section for services list -->
-<div class="services container">
+<!-- section for services list -->
+<div class="services-container">
 
     <div class="row">
-        <! insert thymeleaf-->
-        <div th:each="service: ${services}" class="col-6 col-12-sm">
-            <div class="text-holder">
-                <h3 th:href="'/service/' + ${service.serviceName}" th:text="${service.serviceName}"></h3>
-                <p th:href="'/service/' + ${service.description}" th:text="${service.description}"></p>
-                <p th:href="'/service/' + ${service.price}" th:text="'$' +${service.price}"></p>
+        <!-- insert thymeleaf-->
+        <div th:each="service: ${services}" class="column" style="background-color:#30D5C8; ">
+            <div class="text-holder" style="display: inline-block">
+                <h3 th:href="${service.serviceName}" th:text="${service.serviceName}"></h3>
+                <p th:href="${service.description}" th:text="${service.description}"></p>
+                <p th:href="${service.price}" th:text="'$' +${service.price}"></p>
             </div>
         </div>
     </div>
 </div>
+
+<!-- placeholder for questionnaire-->
 
 </body>
 </html>
