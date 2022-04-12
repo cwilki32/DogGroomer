@@ -5,6 +5,21 @@
     <meta charset="UTF-8"/>
     <title>Home Page</title>
     <link rel="stylesheet" th:href="@{/app.css}">
+    <style>
+        .textbox {
+            border: thin solid white;
+            text-align: center;
+            color: white;
+            background-color: black;
+            opacity: 0.8;
+            word-wrap: break-word; /* words won't go from the boundry */
+            margin-top: auto;
+            margin-left: 20%;
+            margin-right: 20%;
+            padding: 25px;
+            border-radius: 30px;
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -33,14 +48,20 @@
     <img class="dogphoto" th:src="${dogPhoto3}"></img>
     <img class="dogphoto" th:src="${dogPhoto4}"></img>
     <img class="dogphoto" th:src="${dogPhoto5}"></img>
-    <div class="companylogo">
-        <img class="logo" th:src="'/images/' + 'Logo1.PNG'" alt="Logo"
-             style="width: 100px;height:auto;padding-top: 5px;"/>
-        <h1 class="card-title" th:href="${company.getName}" th:text="${company.getName}"></h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at autem dignissimos minima reiciendis repellat, similique? Assumenda dolorum error facilis, id illum impedit in inventore minima quae quaerat reiciendis velit!</p>
-        <h3>SPECIALS</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, architecto deleniti dicta distinctio dolore, dolorem eius et explicabo illo incidunt iure magni nemo officiis pariatur, placeat quae sed tenetur ullam?</p>
-        <button><a href="/schedule">Book Appointment</a></button>
+    <div class="textbox">
+        <div class="companylogo">
+            <img class="logo" th:src="'/images/' + 'Logo1.PNG'" alt="Logo"
+                 style="width: 100px;height:auto;padding-top: 5px;"/>
+            <h1 class="card-title" th:href="${company.getName}" th:text="${company.getName}"></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at autem dignissimos minima
+                reiciendis repellat, similique? Assumenda dolorum error facilis, id illum impedit in inventore minima
+                quae quaerat reiciendis velit!</p>
+            <h3>SPECIALS</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, architecto deleniti dicta distinctio
+                dolore, dolorem eius et explicabo illo incidunt iure magni nemo officiis pariatur, placeat quae sed
+                tenetur ullam?</p>
+            <button><a href="/schedule">Book Appointment</a></button>
+        </div>
     </div>
 </div>
 </body>
