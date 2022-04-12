@@ -34,10 +34,10 @@ public class SiteController {
     public String displayFAQ() {
         return "faq";
     }
-    @RequestMapping("/contact")
-    public String displayContact() {
-        return "contact";
-    }
+//    @RequestMapping("/contact")
+//    public String displayContact() {
+//        return "contact";
+//    }
     @RequestMapping("/schedule")
     public String displaySchedule() {
         return "schedule";
