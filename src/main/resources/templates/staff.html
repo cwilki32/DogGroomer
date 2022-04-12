@@ -5,6 +5,21 @@
     <meta charset="UTF-8"/>
     <title>Meet the Staff</title>
     <link rel="stylesheet" th:href="@{/app.css}">
+    <style>
+        .textbox {
+            border: thin solid white;
+            text-align: center;
+            color: white;
+            background-color: black;
+            opacity: 0.8;
+            word-wrap: break-word; /* words won't go from the boundry */
+            margin-top: auto;
+            margin-left: 20%;
+            margin-right: 20%;
+            padding: 25px;
+            border-radius: 30px;
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -28,15 +43,17 @@
     </div>
 </nav>
 <div class="staffList">
-    <div class ="row">
-        <div class ="item" th:each="ListOfStaff: ${staff}">
-            <div class ="column">
-                <img th:src="@{'/staffImages/' + ${ListOfStaff.imageID} + '.jpg'}" style="width: 202px; height: 260px;"/>
-                <p th:href="${ListOfStaff.name}" th:text="${ListOfStaff.name}"></p>
-                <p th:href="${ListOfStaff.bio}" th:text="${ListOfStaff.bio}"></p>
-                <hr>
-                <br>
+    <div class="row">
+        <div class="item" th:each="ListOfStaff: ${staff}">
+            <div class="textbox">
+                <div class="column">
+                    <img th:src="@{'/staffImages/' + ${ListOfStaff.imageID} + '.jpg'}"
+                         style="width: 202px; height: 260px;"/>
+                    <h3 th:href="${ListOfStaff.name}" th:text="${ListOfStaff.name}"></h3>
+                    <p th:href="${ListOfStaff.bio}" th:text="${ListOfStaff.bio}"></p>
+                </div>
             </div>
+            <br>
         </div>
     </div>
 </div>
