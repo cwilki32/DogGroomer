@@ -34,6 +34,19 @@
         display: table;
         clear: both;
     }
+    .textbox {
+        border: thin solid white;
+        text-align: center;
+        color: white;
+        background-color: black;
+        opacity: 0.8;
+        word-wrap: break-word; /* words won't go from the boundry */
+        margin-top: auto;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding: 25px;
+        border-radius: 30px;
+    }
 </style>
 
 <body>
@@ -62,15 +75,15 @@
 <h1 style="text-align: center">Services Offered</h1>
 
 <!-- section for services list -->
-<div class="services-container">
+<div class="services-container textbox">
 
     <div class="row">
         <!-- insert thymeleaf-->
         <div th:each="service: ${services}" class="column" style="background-color:#30D5C8; ">
             <div class="text-holder" style="display: inline-block">
-                <h3 th:href="${service.serviceName}" th:text="${service.serviceName}"></h3>
-                <p th:href="${service.description}" th:text="${service.description}"></p>
-                <p th:href="${service.price}" th:text="'$' +${service.price}"></p>
+                <h3 th:href="${service.serviceName}" th:text="${service.serviceName}" style="color: white"></h3>
+                <p th:href="${service.description}" th:text="${service.description}" style="color: black"></p>
+                <p th:href="${service.price}" th:text="'$' +${service.price}" style="color: black"></p>
             </div>
         </div>
     </div>
