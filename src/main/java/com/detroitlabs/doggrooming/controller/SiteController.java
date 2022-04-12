@@ -22,10 +22,10 @@ public class SiteController {
     public String displayStaff() {
         return "staff";
     }
-//    @RequestMapping("/services")
-//    public String displayServices() {
-//        return "services";
-//    }
+    @RequestMapping("/services")
+    public String displayServices() {
+        return "services";
+    }
     @RequestMapping("/reviews")
     public String displayReviews() {
         return "reviews";
