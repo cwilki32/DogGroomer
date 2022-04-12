@@ -18,7 +18,9 @@ public class ServiceRepository {
             new GroomingServices("Bath", "", 20),
             new GroomingServices("Ear cleaning", "", 12),
             new GroomingServices("FFF", "face, feet, fanny trim", 15),
-            new GroomingServices("Teeth-brushing", "", 10)
+            new GroomingServices("Teeth-brushing", "", 10),
+            new GroomingServices("Blueberry Facial", "Amazing blueberry infused shampoo, conditioner and matching scent spray", 8),
+            new GroomingServices("Dye", "Looking for a switch-up? We offer many different colorful safe options for your pet", 20)
     );
 
     public static List<GroomingServices> getAllServices() {
