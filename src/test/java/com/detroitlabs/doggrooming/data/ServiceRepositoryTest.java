@@ -18,4 +18,5 @@ class ServiceRepositoryTest {
         assertEquals(result.get(0).getServiceName(), "Mutts Cutts Makeover");
 
     }
+
 }

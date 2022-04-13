@@ -4,13 +4,17 @@ import com.detroitlabs.doggrooming.data.CompanyRepository;
 import com.detroitlabs.doggrooming.data.ServiceRepository;
 import com.detroitlabs.doggrooming.data.StaffRepository;
 import com.detroitlabs.doggrooming.model.Dog;
+import com.detroitlabs.doggrooming.model.GroomingServices;
 import com.detroitlabs.doggrooming.service.DogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 @Controller
 public class SiteController {
@@ -72,8 +76,15 @@ public class SiteController {
         return "schedule";
     }
 
-//    @RequestMapping(value = "/search", method = RequestMethod.GET)
-//    public String displaySearchResults(@RequestParam("q") String q, ModelMap modelMap) {
-//        return
-//    }
+    @RequestMapping(value = "/service-results", method = RequestMethod.GET)
+    public String displaySearchResults(@RequestParam("q") String q, ModelMap modelMap) {
+        List<GroomingServices> serviceByKeyword = serviceRepository.serviceResults("q");
+        modelMap.put("services", serviceByKeyword);
+        return "service-results";
+    }
+
+    @RequestMapping("/gallery")
+    public String displayGallery() {
+        return "gallery";
+    }
 }
