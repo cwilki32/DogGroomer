@@ -5,49 +5,7 @@
     <meta charset="UTF-8"/>
     <title>Home Page</title>
     <link rel="stylesheet" th:href="@{/app.css}">
-    <style>
-        .textbox {
-            border: thin solid white;
-            text-align: center;
-            color: white;
-            background-color: black;
-            opacity: 0.8;
-            word-wrap: break-word; /* words won't go from the boundry */
-            margin-top: auto;
-            margin-left: 20%;
-            margin-right: 20%;
-            padding: 25px;
-            border-radius: 30px;
-        }
-        .btn {
-            background: #30D5C8;
-            background-image: -webkit-linear-gradient(top, #30D5C8, #30D5C8);
-            background-image: -moz-linear-gradient(top, #30D5C8, #30D5C8);
-            background-image: -ms-linear-gradient(top, #30D5C8, #30D5C8);
-            background-image: -o-linear-gradient(top, #30D5C8, #30D5C8);
-            background-image: linear-gradient(to bottom, #30D5C8, #30D5C8);
-            -webkit-border-radius: 28px;
-            -moz-border-radius: 28px;
-            border-radius: 28px;
-            font-family: Courier New;
-            color: #ffffff;
-            font-size: 23px;
-            padding: 10px 20px 10px 20px;
-            border: solid #1f628d 4px;
-            text-decoration: none;
-        }
-
-        .btn:hover {
-            color: #333;
-            background: #ddd;
-            background-image: -webkit-linear-gradient(top, #ddd, #ddd);
-            background-image: -moz-linear-gradient(top, #ddd, #ddd);
-            background-image: -ms-linear-gradient(top, #ddd, #ddd);
-            background-image: -o-linear-gradient(top, #ddd, #ddd);
-            background-image: linear-gradient(to bottom, #ddd, #ddd);
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" th:href="@{/gallery.css}">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -70,5 +28,111 @@
         </div>
     </div>
 </nav>
+<!-- Container for the image gallery -->
+<div class="container">
+
+    <!-- Full-width images with number text -->
+    <div class="mySlides">
+        <div class="numbertext">1 / 6</div>
+        <img th:src="'/images/' + 'tigerbear.jpeg'" style="width: 100%; height: 800px;">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">2 / 6</div>
+        <img th:src="'/images/' + 'panda.jpeg'" style="width:100%; height: 800px;">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">3 / 6</div>
+        <img th:src="'/images/' + 'karen.jpeg'" style="width:100%; height: 800px;">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">4 / 6</div>
+        <img th:src="'/images/' + 'corgibutt.jpeg'" style="width:100%; height: 800px;">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">5 / 6</div>
+        <img th:src="'/images/' + 'rainbow.jpeg'" style="width:100%; height: 800px;">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">6 / 6</div>
+        <img th:src="'/images/' + 'galaxy.jpeg'" style="width:100%; height: 1000px;">
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <!-- Image text -->
+    <div class="caption-container">
+        <p id="caption"></p>
+    </div>
+
+    <!-- Thumbnail images -->
+    <div class="row">
+        <div class="column">
+            <img class="demo cursor" th:src="'/images/' + 'tigerbear.jpeg'" style="width:100%; height: 125px;" onclick="currentSlide(1)" alt="The Tiger">
+        </div>
+        <div class="column">
+            <img class="demo cursor" th:src="'/images/' + 'panda.jpeg'" style="width:100%; height: 125px;" onclick="currentSlide(2)"
+                 alt="The Panda">
+        </div>
+        <div class="column">
+            <img class="demo cursor" th:src="'/images/' + 'karen.jpeg'" style="width:100%; height: 125px;" onclick="currentSlide(3)"
+                 alt="The Karen">
+        </div>
+        <div class="column">
+            <img class="demo cursor" th:src="'/images/' + 'corgibutt.jpeg'" style="width:100%; height: 125px;" onclick="currentSlide(4)"
+                 alt="Heart Butt">
+        </div>
+        <div class="column">
+            <img class="demo cursor" th:src="'/images/' + 'rainbow.jpeg'" style="width:100%; height: 125px;" onclick="currentSlide(5)"
+                 alt="The Rainbow">
+        </div>
+        <div class="column">
+            <img class="demo cursor" th:src="'/images/' + 'galaxy.jpeg'" style="width:100%; height: 125px;" onclick="currentSlide(6)"
+                 alt="The Galaxy">
+        </div>
+    </div>
+</div>
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("demo");
+        let captionText = document.getElementById("caption");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+</script>
 </body>
 </html>
