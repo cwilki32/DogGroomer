@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class SiteController {
@@ -69,4 +71,9 @@ public class SiteController {
     public String displaySchedule() {
         return "schedule";
     }
+
+//    @RequestMapping(value = "/search", method = RequestMethod.GET)
+//    public String displaySearchResults(@RequestParam("q") String q, ModelMap modelMap) {
+//        return
+//    }
 }

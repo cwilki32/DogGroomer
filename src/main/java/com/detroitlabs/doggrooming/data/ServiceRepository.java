@@ -3,6 +3,7 @@ package com.detroitlabs.doggrooming.data;
 import com.detroitlabs.doggrooming.model.GroomingServices;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -29,5 +30,14 @@ public class ServiceRepository {
 
     public static void setAllServices(List<GroomingServices> allServices) {
         ALL_SERVICES = allServices;
+    }
+
+    public List<GroomingServices> serviceResults(String keyword){
+        List<GroomingServices> servicesByKeyword = new ArrayList<>();
+        for(GroomingServices groomingServices: ALL_SERVICES){
+            if (groomingServices.getDescription().contains(keyword)){
+                servicesByKeyword.add(groomingServices);
+            }
+        }return servicesByKeyword;
     }
 }

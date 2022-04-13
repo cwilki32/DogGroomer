@@ -5,6 +5,7 @@ public class GroomingServices {
     String serviceName;
     String description;
     int price;
+    String keyword;
 
     public String getServiceName() {
         return serviceName;
@@ -28,6 +29,14 @@ public class GroomingServices {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
     }
 
     public GroomingServices(String serviceName, String description, int price) {
