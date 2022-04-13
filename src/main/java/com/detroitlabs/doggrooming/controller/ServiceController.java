@@ -8,7 +8,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class ServiceController {
+public class ServiceController { //handles methods for the contains/image map
 
     @Autowired
     ServiceRepository serviceRepository;

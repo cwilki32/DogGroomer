@@ -41,6 +41,7 @@ public class ServiceRepository {
         }return servicesByKeyword;
     }
 
+    //create a method for description that contains image from image map
     public  List<GroomingServices> resultsContainNails(){
         List<GroomingServices> servicesByNails = new ArrayList<>();
         for (GroomingServices groomingServices: ALL_SERVICES){
