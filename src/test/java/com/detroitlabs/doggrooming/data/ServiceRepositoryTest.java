@@ -9,13 +9,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ServiceRepositoryTest {
 
-    @Test   //Fail
+    @Test   //Pass
     void serviceResults() {
         ServiceRepository serviceRepository = new ServiceRepository();
 
         List<GroomingServices> result = serviceRepository.serviceResults("nail");
 
-        assertEquals(result, "nail");
+        assertEquals(result.get(0).getServiceName(), "Mutts Cutts Makeover");
 
     }
 }
