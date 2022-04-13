@@ -76,12 +76,12 @@ public class SiteController {
         return "schedule";
     }
 
-    @RequestMapping(value = "/service-results", method = RequestMethod.GET)
-    public String displaySearchResults(@RequestParam("q") String q, ModelMap modelMap) {
-        List<GroomingServices> serviceByKeyword = serviceRepository.serviceResults("q");
-        modelMap.put("services", serviceByKeyword);
-        return "service-results";
-    }
+//    @RequestMapping(value = "/service-results", method = RequestMethod.GET)
+//    public String displaySearchResults(@RequestParam("q") String q, ModelMap modelMap) {
+//        List<GroomingServices> serviceByKeyword = serviceRepository.serviceResults("q");
+//        modelMap.put("services", serviceByKeyword);
+//        return "service-results";
+//    }
 
     @RequestMapping("/gallery")
     public String displayGallery() {
