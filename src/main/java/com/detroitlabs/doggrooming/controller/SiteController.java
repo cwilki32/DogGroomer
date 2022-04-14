@@ -81,4 +81,9 @@ public class SiteController {
     public String displayGallery() {
         return "gallery";
     }
+
+    @RequestMapping("/shopping-cart")
+    public String displayCart(){
+        return "shopping-cart";
+    }
 }
