@@ -44,12 +44,13 @@ body {
     background-color: #30D5C8;
     font-family: 'Roboto', sans-serif;
 }
+
 .shopping-cart {
     width: 750px;
     height: 423px;
     margin: 80px auto;
     background: #FFFFFF;
-    box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+    box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.10);
     border-radius: 6px;
 
     display: flex;
@@ -72,23 +73,28 @@ body {
 }
 
 .item:nth-child(3) {
-    border-top:  1px solid #E1E8EE;
-    border-bottom:  1px solid #E1E8EE;
+    border-top: 1px solid #E1E8EE;
+    border-bottom: 1px solid #E1E8EE;
 }
+
 .buttons {
     position: relative;
     padding-top: 30px;
     margin-right: 60px;
 }
+
 .delete-btn,
 .like-btn {
     display: inline-block;
     Cursor: pointer;
 }
+
 .delete-btn {
     width: 18px;
     height: 17px;
-    background: url("&amp;quot;delete-icn.svg&amp;quot;") no-repeat center;
+    /*background-image: url("/cartImages/X.png");*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
 }
 
 .like-btn {
@@ -98,26 +104,50 @@ body {
     width: 60px;
     height: 60px;
     background-size: 2900%;
-    background: url('/cartImages/heart.png') no-repeat;
-}
-.is-active {
-    animation-name: animate;
-    animation-duration: .8s;
-    animation-iteration-count: 1;
-    animation-timing-function: steps(28);
-    animation-fill-mode: forwards;
+    /*background: url("#9825");*/
+    /*!*background-image: url("/cartImages/heart.png");*!*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
 }
 
-@keyframes animate {
-    0%   { background-position: left;  }
-    50%  { background-position: right; }
-    100% { background-position: right; }
+.is-active {
+    color: red;
+    top: 6px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+
+    /*animation-name: animate;*/
+    /*animation-duration: .8s;*/
+    /*animation-iteration-count: 1;*/
+    /*animation-timing-function: steps(28);*/
+    /*animation-fill-mode: forwards;*/
 }
+
+/*.is-active ion-icon {*/
+/*    top: 6px;*/
+/*    left: 10px;*/
+/*    width: 40px;*/
+/*    height: 40px;*/
+/*}*/
+
+@keyframes animate {
+    0% {
+        background-position: left;
+    }
+    50% {
+        background-position: right;
+    }
+    100% {
+        background-position: right;
+    }
+}
+
 .image {
     margin-right: 50px;
 }
 
-Let’s add some basic style to  product name and description.
+Let’s add some basic style to product name and description.
 .description {
     padding-top: 10px;
     margin-right: 60px;
@@ -134,15 +164,19 @@ Let’s add some basic style to  product name and description.
 .description span:first-child {
     margin-bottom: 5px;
 }
+
 .description span:last-child {
     font-weight: 300;
     margin-top: 8px;
     color: #86939E;
 }
+
 .quantity {
+    margin-left: 30px;
     padding-top: 20px;
     margin-right: 60px;
 }
+
 .quantity input {
     -webkit-appearance: none;
     border: none;
@@ -161,17 +195,20 @@ button[class*=btn] {
     border: none;
     cursor: pointer;
 }
+
 .minus-btn img {
     margin-bottom: 3px;
 }
+
 .plus-btn img {
     margin-top: 2px;
 }
 
 button:focus,
 input:focus {
-    outline:0;
+    outline: 0;
 }
+
 .total-price {
     width: 83px;
     padding-top: 27px;
@@ -187,14 +224,17 @@ input:focus {
         height: auto;
         overflow: hidden;
     }
+
     .item {
         height: auto;
         flex-wrap: wrap;
         justify-content: center;
     }
+
     .image img {
         width: 50%;
     }
+
     .image,
     .quantity,
     .description {
@@ -202,7 +242,170 @@ input:focus {
         text-align: center;
         margin: 6px 0;
     }
+
     .buttons {
         margin-right: 20px;
     }
+}
+
+
+/*what I Added */
+.heart-switch {
+    --duration: 0.45s;
+    --stroke: #d1d6ee;
+    --stroke-active: #ec4472;
+    --fill: #fff;
+    --fill-active: #ec638e;
+    --shadow: rgba(0, 9, 61, 0.25);
+    cursor: pointer;
+    position: relative;
+    transform: scale(var(--s, 1)) translateZ(0);
+    transition: transform 0.2s;
+    -webkit-tap-highlight-color: transparent;
+}
+.heart-switch:active {
+    --s: 0.95;
+}
+.heart-switch input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: absolute;
+    outline: none;
+    border: none;
+    pointer-events: none;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    left: 1px;
+    top: 1px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 3px 0 var(--shadow);
+}
+.heart-switch input + svg {
+    width: 36px;
+    height: 25px;
+    fill: var(--fill);
+    stroke: var(--stroke);
+    stroke-width: 1px;
+    stroke-linejoin: round;
+    display: block;
+    transition: stroke var(--duration), fill var(--duration);
+}
+.heart-switch input:not(:checked) {
+    -webkit-animation: uncheck var(--duration) linear forwards;
+    animation: uncheck var(--duration) linear forwards;
+}
+.heart-switch input:checked {
+    -webkit-animation: check var(--duration) linear forwards;
+    animation: check var(--duration) linear forwards;
+}
+.heart-switch input:checked + svg {
+    --fill: var(--fill-active);
+    --stroke: var(--stroke-active);
+}
+
+@-webkit-keyframes uncheck {
+    0% {
+        transform: rotate(-30deg) translateX(13.5px) translateY(8px);
+    }
+    50% {
+        transform: rotate(30deg) translateX(9px);
+    }
+    75% {
+        transform: rotate(30deg) translateX(4.5px) scaleX(1.1);
+    }
+    100% {
+        transform: rotate(30deg);
+    }
+}
+
+@keyframes uncheck {
+    0% {
+        transform: rotate(-30deg) translateX(13.5px) translateY(8px);
+    }
+    50% {
+        transform: rotate(30deg) translateX(9px);
+    }
+    75% {
+        transform: rotate(30deg) translateX(4.5px) scaleX(1.1);
+    }
+    100% {
+        transform: rotate(30deg);
+    }
+}
+@-webkit-keyframes check {
+    0% {
+        transform: rotate(30deg);
+    }
+    25% {
+        transform: rotate(30deg) translateX(4.5px) scaleX(1.1);
+    }
+    50% {
+        transform: rotate(30deg) translateX(9px);
+    }
+    100% {
+        transform: rotate(-30deg) translateX(13.5px) translateY(8px);
+    }
+}
+@keyframes check {
+    0% {
+        transform: rotate(30deg);
+    }
+    25% {
+        transform: rotate(30deg) translateX(4.5px) scaleX(1.1);
+    }
+    50% {
+        transform: rotate(30deg) translateX(9px);
+    }
+    100% {
+        transform: rotate(-30deg) translateX(13.5px) translateY(8px);
+    }
+}
+html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+* {
+    box-sizing: inherit;
+}
+*:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    font-family: "Roboto", Arial;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #f6f8ff;
+}
+body .heart-switch {
+    margin: 12px 0;
+}
+body .dribbble {
+    position: fixed;
+    display: block;
+    right: 20px;
+    bottom: 20px;
+}
+body .dribbble img {
+    display: block;
+    height: 28px;
+}
+body .twitter {
+    position: fixed;
+    display: block;
+    right: 64px;
+    bottom: 14px;
+}
+body .twitter svg {
+    width: 32px;
+    height: 32px;
+    fill: #1da1f2;
 }
